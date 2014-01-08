@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-![Screenshot](http://dl.dropbox.com/u/1658623/tmuxrc.png)
+![Screenshot](https://github.com/ceocoder/dotfiles/raw/master/screenshot.gif)
 
 ## Installation
 
