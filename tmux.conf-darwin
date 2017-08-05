@@ -1,0 +1,18 @@
+# OSX specific configuration:
+
+## reattach-to-user-namespace
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+## copy to clipboard
+bind -t vi-copy Y copy-pipe "reattach-to-user-namespace pbcopy"
+
+## status related?
+set -g message-bg colour221
+set -g message-attr bold
+
+## set darwin specific status:
+
+set -g status-left '#[fg=colour235,bg=colour252,bold] 🍺  #S#[fg=colour252,bg=colour238,nobold]⮀#[fg=colour245,bg=colour238,bold] #(whoami)#[fg=colour238,bg=colour234,nobold]⮀'
+set -g status-right '#[fg=colour39, bg=colour234]⮂#[fg=colour234,bg=colour39]#(ifconfig en1 | grep "inet " | cut -d" " -f 2 | xargs echo "Wi-Fi :") #[fg=colour234,bg=colour250]#(ifconfig en0 | grep "inet " | cut -d" " -f 2 | xargs echo "Ether :" )#(ifconfig jnc0 | grep "inet " | cut -d" " -f 2 | xargs echo "VPN :" )'
+
+set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour232,bg=colour39,noreverse,bold] #I ⮁ #W#[fg=colour39,bg=colour234,nobold]⮀"
