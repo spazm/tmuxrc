@@ -2,7 +2,6 @@
 # By remapping the `CapsLock` key to `Ctrl`,
 # you can make triggering commands more comfottable!
 set -g prefix `
-#set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Free the original `Ctrl-b` prefix keybinding.
 unbind C-b
@@ -65,11 +64,8 @@ bind -t vi-copy 'y' copy-selection
 #
 ## set history size to reasonably large
 set -g history-limit 50000
-#
-#
-## copy to mac clipboard
-## This is where the magic happens
-bind -t vi-copy Y copy-pipe "xclip -sel clip -i"
+
+
 #
 ## Setting the delay between prefix and command.
 set -sg escape-time 1
@@ -79,10 +75,7 @@ set -g base-index 1
 #
 ## Set the base index for panes to 1 instead of 0.
 setw -g pane-base-index 1
-#
-## Set the default terminal mode to 256color mode.
-set -g default-terminal "screen-256color"
-#set -g default-terminal "screen-256color-bce"
+
 #
 ## Enable activity alerts.
 setw -g monitor-activity on
@@ -111,13 +104,7 @@ set -g window-status-activity-attr bold
 set -g pane-border-fg colour245
 set -g pane-active-border-fg colour39
 set -g message-fg colour16
-#set -g message-bg colour221 set -g message-attr bold
-set -g status-right '#[fg=white]#(hostname)@#(host `hostname` | cut -d " " -f 4)'
-
-set -g status-left '#[fg=colour235,bg=colour252,bold] #S#[fg=colour252,bg=colour238,nobold]#[fg=colour245,bg=colour238,bold] #(whoami)#[fg=colour238,bg=colour234,nobold]'
-set -g status-right '#[fg=colour235, bg=colour252,bold]#(ifconfig eth0 | grep "inet " | cut -d" " -f12 | cut -d":" -f2 | xargs echo "Ether:")'
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour39]#[fg=colour232,bg=colour39,noreverse,bold] #I #W#[fg=colour39,bg=colour234,nobold]"
 #
 ## Solarized color.
 source-file ~/.dotfiles/tmux/vendor/tmux-colors-solarized/tmuxcolors.conf

@@ -1,0 +1,15 @@
+# Linux specific configuration:
+
+## copy to clipboard
+bind -t vi-copy Y copy-pipe "xclip -sel clip -i"
+
+## terminal default for linux
+set -g default-terminal "screen-256color"
+
+## set linux specific status:
+
+set -g status-right '#[fg=white]#(hostname)@#(host `hostname` | cut -d " " -f 4)'
+
+set -g status-left '#[fg=colour235,bg=colour252,bold] #S#[fg=colour252,bg=colour238,nobold]#[fg=colour245,bg=colour238,bold] #(whoami)#[fg=colour238,bg=colour234,nobold]'
+set -g status-right '#[fg=colour235, bg=colour252,bold]#(ifconfig eth0 | grep "inet " | cut -d" " -f12 | cut -d":" -f2 | xargs echo "Ether:")'
+set -g window-status-current-format "#[fg=colour234,bg=colour39]#[fg=colour232,bg=colour39,noreverse,bold] #I #W#[fg=colour39,bg=colour234,nobold]"
