@@ -63,7 +63,6 @@ bind P paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 #
-#
 ## set history size to reasonably large
 set -g history-limit 50000
 #
@@ -71,8 +70,6 @@ set -g history-limit 50000
 ## copy to mac clipboard
 ## This is where the magic happens
 bind -t vi-copy Y copy-pipe "xclip -sel clip -i"
-#
-#
 #
 ## Setting the delay between prefix and command.
 set -sg escape-time 1
