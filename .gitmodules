@@ -1,6 +1,8 @@
 [submodule "vendor/tmux-colors-solarized"]
 	path = vendor/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+	branch = master
 [submodule "plugins/tpm"]
 	path = plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+	branch = master
